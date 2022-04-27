@@ -17,9 +17,9 @@ class CmfScm {
                 }
                 script.checkout changelog: false, poll: false, \
                     scm: [$class: 'RepoScm', currentBranch: true, depth: "${depth}", \
-                        destinationDir: '.', jobs: 1, manifestBranch: 'rdk-next', \
-                        manifestFile: 'cmf-tools.xml', \
-                        manifestRepositoryUrl: 'https://code.rdkcentral.com/r/cmf/manifests', \
+                        destinationDir: "${destinaton}", jobs: 1, manifestBranch: "${branch}", \
+                        manifestFile: "${manifest}", \
+                        manifestRepositoryUrl: "${url}", \
                         quiet: true, resetFirst: true]
                /* script.checkout changelog: false, poll: false, \
                     scm: [$class: 'RepoScm', \
