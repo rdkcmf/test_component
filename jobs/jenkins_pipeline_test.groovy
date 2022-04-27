@@ -21,6 +21,10 @@ node('ec2-multijob'){
         catch (exc) {
             echo 'Something failed, I should sound the klaxons!'
         }
+        echo "here"
+        cleanWs()
+        echo "there"
+
     } 
 }
 
