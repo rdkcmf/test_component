@@ -8,24 +8,17 @@
 
   
 node('ec2-multijob'){
-    new scripted.ScriptedFooStage(this).execute('Foo', true)
-    stage('stage2') {
+    //new scripted.ScriptedFooStage(this).execute('Foo', true)
+    new scripted_stages.CmfPreScm(this).execute(dirclean=true, BuildName="toto \${BUILD_NAME}")
+    new scripted_stages.CmfScm(this).repo('https://code.rdkcentral.com/r/cmf/manifests', 'cmf-tools.xml', 'rdk-next', '.', 1)
+    stage('stagex') {
         try {
-            checkout changelog: false, poll: false, \
-                    scm: [$class: 'RepoScm', currentBranch: true, depth: 1, \
-                        destinationDir: '.', jobs: 1, manifestBranch: 'rdk-next', \
-                        manifestFile: 'cmf-tools.xml', \
-                        manifestRepositoryUrl: 'https://code.rdkcentral.com/r/cmf/manifests', \
-                        quiet: true, resetFirst: true]
+            echo 'in stage x, do something, and send a failure'
         }
         catch (exc) {
             echo 'Something failed, I should sound the klaxons!'
         }
-        echo "here"
-        cleanWs()
-        echo "there"
     } 
-    new scripted_stages.CmfScm(this).repo('https://code.rdkcentral.com/r/cmf/manifests', 'cmf-tools.xml', 'rdk-next', '.', 1)
 }
 
 //pipeline {
