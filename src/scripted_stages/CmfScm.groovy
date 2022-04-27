@@ -16,7 +16,7 @@ class CmfScm {
                     script.echo "Credentials can't be used with repo"
                 }
                 script.checkout changelog: false, poll: false, \
-                    scm: [$class: 'RepoScm', \
+                    scm: [\$class: 'RepoScm', \
                         currentBranch: true, \
                         depth: ${depth}, \
                         destinationDir: "${destination}", \
@@ -31,7 +31,7 @@ class CmfScm {
                 script.echo "using git"
                 script.checkout changelog: false, poll: false, \
                     scm: [ \
-                        $class: 'GitSCM', \
+                        \$class: 'GitSCM', \
                         branches: [[name: "${branch}"]], \
                         extensions: [ \
                             [ \
