@@ -9,7 +9,7 @@
   
 node('ec2-multijob'){
     //new scripted.ScriptedFooStage(this).execute('Foo', true)
-    new scripted_stages.CmfPreScm(this).execute(true, "toto \${BUILD_NAME}")
+    new scripted_stages.CmfPreScm(this).execute(true, "toto \${BUILD_NUMBER}")
     new scripted_stages.CmfScm(this).repo('https://code.rdkcentral.com/r/cmf/manifests', 'cmf-tools.xml', 'rdk-next', '.', 1)
     stage('stagex') {
         try {
