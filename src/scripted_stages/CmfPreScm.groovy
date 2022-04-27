@@ -12,10 +12,14 @@ class CmfPreScm {
             if (dirclean) {
                 script.echo "Cleanup previous dir"
                 script.cleanWs()
+            }else{
+                script.echo "Not cleaning up directory"
             }
             if (BuildName) {
-                script.echo "Set Build Name to ${BuildName}"
+                script.echo "Set BuildName to ${BuildName}"
                 script.buildName "${BuildName} ->"
+            }else{
+                script.echo "Not setting a custom BuildName"
             }
         }
     }
