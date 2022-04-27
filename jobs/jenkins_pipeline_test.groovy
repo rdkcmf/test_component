@@ -25,7 +25,7 @@ node('ec2-multijob'){
         cleanWs()
         echo "there"
     } 
-    new scripted_stages.CmfScm(this).execute('https://code.rdkcentral.com/r/cmf/manifests', 'cmf-tools.xml')
+    new scripted_stages.CmfScm(this).execute('https://code.rdkcentral.com/r/cmf/manifests', 'cmf-tools.xml', 'rdk-next', '.', 1, '')
 }
 
 //pipeline {
