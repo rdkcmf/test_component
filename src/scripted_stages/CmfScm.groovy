@@ -10,9 +10,9 @@ class CmfScm {
     void execute(String url, String manifest='', String branch='rdk-next', String destination='.', Integer depth=0, String credentials='') {
         script.stage('SCM') {
             script.echo "Checkout ${url}"
-            if (${manifest} != '' ) {
+            if ("${manifest}" != '' ) {
                 script.echo "Manifest asked, using repo"
-                if (${credentials} != '') {
+                if ("${credentials}" != '') {
                     script.echo "Credentials can't be used with repo"
                 }
                 script.checkout changelog: false, poll: false, \
@@ -56,3 +56,4 @@ class CmfScm {
         }
     } 
 }
+
