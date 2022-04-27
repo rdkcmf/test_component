@@ -17,7 +17,7 @@ class CmfScm {
                 }
                 script.checkout changelog: false, poll: false, \
                     scm: [$class: 'RepoScm', currentBranch: true, depth: "${depth}", \
-                        destinationDir: "${destinaton}", jobs: 1, manifestBranch: "${branch}", \
+                        destinationDir: "${destination}", jobs: 1, manifestBranch: "${branch}", \
                         manifestFile: "${manifest}", \
                         manifestRepositoryUrl: "${url}", \
                         quiet: true, resetFirst: true]
