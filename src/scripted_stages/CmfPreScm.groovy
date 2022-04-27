@@ -9,13 +9,14 @@ class CmfPreScm {
     
     void execute(Boolean dirclean=true, String BuildName='') {
         script.stage('Pre SCM') {
-            if ($dirclean) {
+            script.echo "${dirclean}"
+            if (${dirclean}) {
                 script.echo "Cleanup previous dir"
                 script.cleanWs()
             }else{
                 script.echo "Not cleaning up directory"
             }
-            if ("$BuildName" != '') {
+            if ("${BuildName}" != '') {
                 script.echo "Set BuildName to ${BuildName}"
                 script.buildName "${BuildName} ->"
             }else{
