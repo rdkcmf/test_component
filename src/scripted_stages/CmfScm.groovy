@@ -16,7 +16,7 @@ class CmfScm {
                     script.echo "Credentials can't be used with repo"
                 }
                 script.checkout changelog: false, poll: false, \
-                    scm: [$class: 'RepoScm', currentBranch: true, depth: ${depth}, \
+                    scm: [$class: 'RepoScm', currentBranch: true, depth: "${depth}", \
                         destinationDir: '.', jobs: 1, manifestBranch: 'rdk-next', \
                         manifestFile: 'cmf-tools.xml', \
                         manifestRepositoryUrl: 'https://code.rdkcentral.com/r/cmf/manifests', \
