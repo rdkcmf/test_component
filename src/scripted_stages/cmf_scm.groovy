@@ -1,9 +1,9 @@
 package scripted_stage
 
-class cmf_scm {
+class CmfScm {
     private final Script script
 
-    cmf_scm(Script script) {
+    CmfScm(Script script) {
         this.script = script
     }
     
