@@ -20,7 +20,6 @@ node('ec2-multijob'){
         }
         catch (exc) {
             echo 'Something failed, I should sound the klaxons!'
-            throw
         }
     } 
 }
