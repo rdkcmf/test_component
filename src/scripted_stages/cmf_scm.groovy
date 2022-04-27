@@ -48,7 +48,7 @@ class cmf_scm {
                         ], \
                         gitTool: 'Default',\
                         userRemoteConfigs: [[\
-                            credentialsId: "${credentials}",\ 
+                            credentialsId: "${credentials}",\
                             url: "${url}"\
                         ]]\
                     ]
