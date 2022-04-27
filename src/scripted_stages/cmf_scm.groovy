@@ -1,4 +1,4 @@
-package scripted_stage
+package scripted_stages
 
 class CmfScm {
     private final Script script
