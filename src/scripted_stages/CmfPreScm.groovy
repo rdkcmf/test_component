@@ -7,14 +7,10 @@ class CmfPreScm {
         this.script = script
     }
     
-    void execute(boolean dirclean=true, String BuildName='') {
+    void execute(Boolean dirclean=true, String BuildName='') {
         script.stage('Pre SCM') {
-            if (dirclean) {
-                script.echo "Cleanup previous dir"
-                script.cleanWs()
-            }else{
-                script.echo "Not cleaning up directory"
-            }
+            script.echo "Cleanup previous dir"
+            script.cleanWs()
             if ("${BuildName}" != '') {
                 script.echo "Set BuildName to ${BuildName}"
                 script.buildName "${BuildName} ->"
