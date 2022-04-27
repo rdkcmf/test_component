@@ -15,7 +15,7 @@ class CmfPreScm {
             }
             if ("${BuildName}" != '') {
                 script.echo "Set BuildName to ${BuildName}"
-                script.buildName "${BuildName} ->"
+                script.buildName "${BuildName}"
             }else{
                 script.echo "Not setting a custom BuildName"
             }
